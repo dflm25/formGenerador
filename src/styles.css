@@ -1,0 +1,126 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+a,
+button {
+  cursor: pointer;
+}
+select,
+input[type="text"] {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid gray;
+  width: 100%;
+  max-width: 200px;
+  max-height: 32px;
+}
+
+.contentForm {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.contentForm > div {
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+div.error,
+span.error {
+  color: red;
+  position: relative;
+  height: 0;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.backBtn {
+  min-height: 20px;
+}
+.backBtn button {
+  border: 0;
+  font-size: 1rem;
+  background: transparent;
+}
+.nextBtn {
+  border: 0;
+  color: #fff;
+  background-color: green;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: block;
+  height: 32px;
+}
+
+.backBtn:hover {
+  color: green;
+}
+
+.numberConten {
+  margin: 20px 0;
+  padding: 0;
+}
+
+.numberConten li {
+  display: inline-block;
+  padding: 1px;
+  vertical-align: middle;
+  line-height: 2;
+  position: relative;
+  z-index: 5;
+  background: white;
+}
+
+.numberConten li::after {
+  content: "";
+  width: 20px;
+  height: 0;
+  border-top: 1px solid gray;
+  display: inline-block;
+  position: absolute;
+  z-index: 4;
+  top: 49%;
+  left: -21px;
+}
+
+.numberConten li:first-child::after,
+.numberConten li.active:first-child::after {
+  content: "";
+  display: none;
+}
+
+.numberConten li {
+  border-radius: 20px;
+  border: 1px solid gray;
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  color: gray;
+  background: white;
+}
+
+.numberConten li.active {
+  color: #fff;
+  border: 1px solid green;
+  background: green;
+  font-weight: bold;
+}
+
+.numberConten li.active::after {
+  content: "";
+  width: 20px;
+  height: 0;
+  border-top: 1px solid green;
+  display: inline-block;
+  position: absolute;
+  z-index: 4;
+  top: 49%;
+  right: -20px;
+  animation: step 200ms ease-in-out;
+}
